@@ -15,7 +15,7 @@ races = []
 
 with open(output_txt, 'w') as f:
     for name in image_names:
-        relative_path = os.path.join('UTKFace_small', 'DATA_FACE', name)
+        relative_path = os.path.join('DATA_FACE', name)
         f.write(relative_path + '\n')
 
         parts = name.split('_')
