@@ -4,19 +4,18 @@ import os
 # Load Haar Cascade
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-root_dir = 'E:/Pycharm/Age-Detection-Using-Neural-Network'
+root_dir = '/'
 
 with open(os.path.join(root_dir, 'DATA/UTKFace/file_paths.txt'), 'r') as f:
     image_paths = [line.strip().replace('\\', '/') for line in f if line.strip()]
 
-output_dir = 'DATA/UTKFace/Face_Detection'
+output_dir = '../DATA/UTKFace/Face_Detection'
 os.makedirs(output_dir, exist_ok=True)
 
 for image in image_paths:
     img_path = os.path.join(root_dir, 'DATA', image)
     img = cv2.imread(img_path)
 
-    # Khử nhiễu
     denoised = cv2.bilateralFilter(img, d=10, sigmaColor=75, sigmaSpace=75)
     gray_denoised = cv2.cvtColor(denoised, cv2.COLOR_BGR2GRAY)
 
