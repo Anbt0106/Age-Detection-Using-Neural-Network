@@ -20,7 +20,7 @@ def main():
         image = image / 255.0
         image = tf.expand_dims(image, axis=0)
 
-        model = tf.keras.models.load_model("E:\\Pycharm\\Age-Detection-Using-Neural-Network\\Model\\agemodel2.h5")
+        model = tf.keras.models.load_model("/CODE/Model\\agemodel2.h5")
         age = model.predict(image)
         st.markdown("## You're %i years old according to our model!" % age[0][0])
 
