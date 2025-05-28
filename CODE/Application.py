@@ -9,7 +9,7 @@ def main():
     st.write(
         "Upload an image of yourself below to find out!")
     file = st.file_uploader("Upload Photo")
-    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    # face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
     if file is not None:
 
