@@ -21,6 +21,8 @@ for image in image_paths:
 
     faces = face_cascade.detectMultiScale(gray_denoised, scaleFactor=1.1, minNeighbors=5)
 
+
+# kitr kich thuoc cua cac mặt trước khi cat. Hiêu rõ chọn ngưỡng 127 ..?
     for i, (x, y, w, h) in enumerate(faces):
         if w < 127 or h < 127:
             print(f"Face {i} in {image} is too small, skipping.")
